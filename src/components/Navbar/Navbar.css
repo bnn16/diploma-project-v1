@@ -1,0 +1,122 @@
+.NavbarItem {
+  background: rgb(230, 57, 70);
+  background: linear-gradient(90deg, rgba(230, 57, 70, 1) 100%);
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.navbar-logo {
+  color: #f1faee;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  color: #f1faee;
+  justify-self: start;
+  margin-left: 18px;
+  cursor: pointer;
+}
+#comp {
+  margin-left: 0.5rem;
+  font-size: 1.6rem;
+  padding-right: 0.5rem;
+}
+.fa-bars {
+  color: #f1faee;
+  font-size: 1.2rem;
+  padding-right: 0.5rem;
+}
+
+.fa-times {
+  color: #f1faee;
+  font-size: 1.2rem;
+  padding-right: 0.5rem;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-gap: 10px;
+  list-style: none;
+  text-align: center;
+  width: 75vw;
+  justify-content: left;
+  margin-right: 1rem;
+}
+.nav-menu a:hover {
+  color: #1d3557;
+}
+
+.nav-links {
+  color: #f1faee;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+.nav-links:hover {
+  background-color: #f1faee;
+  border-radius: 4px;
+  transition: all 0.5s ease-out;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 720px) {
+  .NavbarItem {
+    position: relative;
+  }
+  .nav-menu {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: 51vh;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease-in;
+  }
+  .nav-menu.active {
+    background: #e63946;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease-in;
+    z-index: 1;
+  }
+  .nav-menu a:hover {
+    color: #1d3557;
+  }
+  .nav-links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+  }
+  .nav-links:hover {
+    background-color: #f1faee;
+    border-radius: 0;
+  }
+
+  .navbar-logo {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: translate(0%, 25%);
+  }
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+  .fa-times {
+    color: #f1faee;
+    font-size: 2rem;
+  }
+}
