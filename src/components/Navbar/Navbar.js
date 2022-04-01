@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MenuItems } from './MenuItems.js';
+import { MenuItems } from '../../constants/MenuItems.js';
 import './Navbar.css';
 
 const Navbar = () => {

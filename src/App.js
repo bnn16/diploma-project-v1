@@ -7,6 +7,8 @@ import Home from './pages/Home.js';
 import Ka from './pages/Ka';
 import Km from './pages/Km';
 import Zpu from './pages/Zpu';
+import Dzi from './pages/Dzi';
+import AT286 from './pages/lectures-Ka/AT286';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/zpu" element={<Zpu />} />
         <Route path="/km" element={<Km />} />
         <Route path="/ka" element={<Ka />} />
+        <Route path="/dzi" element={<Dzi />} />
+        <Route path="/ka/286" element={<AT286 />} />
       </Routes>
     </>
   );

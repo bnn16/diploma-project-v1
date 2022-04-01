@@ -30,6 +30,13 @@ const Cards = () => {
               label="KM"
               path="/km"
             />
+            <CardItem
+              src="http://www.pvschools.net/schools/sites/default/files/Shadow%20Mountain/Images/AP%20Testing%20.jpg"
+              title="Държавен изпит"
+              text="Тук може да намерите 18 билета от ДЗИ по КТТ."
+              label="ДЗИ"
+              path="/dzi"
+            />
           </ul>
         </div>
       </div>

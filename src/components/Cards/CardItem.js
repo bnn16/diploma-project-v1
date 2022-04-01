@@ -6,7 +6,7 @@ const CardItem = (props) => {
     <div>
       <li className="cards__item">
         <Link
-          style={{ 'text-decoration': 'none' }}
+          style={{ 'textDecoration': 'none' }}
           to={props.path}
           className="cards__item__link"
         >

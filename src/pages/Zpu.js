@@ -2,15 +2,9 @@ import React from 'react';
 
 const Zpu = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '90vh',
-      }}
-    >
+    <div>
       <h1>Zpu page</h1>
+      
     </div>
   );
 };

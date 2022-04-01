@@ -5,6 +5,11 @@ export const MenuItems = [
     cName: 'nav-links',
   },
   {
+    title: 'KA',
+    url: '/ka',
+    cName: 'nav-links',
+  },
+  {
     title: 'ZPU',
     url: '/zpu',
     cName: 'nav-links',
@@ -15,8 +20,8 @@ export const MenuItems = [
     cName: 'nav-links',
   },
   {
-    title: 'KA',
-    url: '/ka',
+    title: 'DZI',
+    url: '/dzi',
     cName: 'nav-links',
   },
 ];

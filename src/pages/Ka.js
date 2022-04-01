@@ -1,17 +1,11 @@
 import React from 'react';
+import Layout from '../components/LayoutPage/Layout';
+import { kaLecturesPart1 } from '../constants/kaLecturesPart1.js';
 
 const Ka = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '90vh',
-      }}
-    >
-      <h1>Ka page</h1>
-      <p>тематизни </p>
+    <div>
+      <Layout lectures={kaLecturesPart1} tems="Komp architecture" />
     </div>
   );
 };

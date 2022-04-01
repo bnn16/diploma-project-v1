@@ -1,0 +1,71 @@
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  background-color: inherit;
+  color: #d8dee9;
+}
+.container {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+}
+
+main {
+  max-width: 800px;
+  background-color: inherit;
+  padding: 16px;
+  border-radius: 8px;
+  margin-left: 8px;
+}
+.card {
+  background-color: red;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 25px;
+}
+.navv {
+  position: sticky;
+  position: -webkit-sticky; /* For Safari */
+  top: 24px; /* How far down the page you want your ToC to live */
+
+  /* Give table of contents a scrollbar */
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+
+  width: 220px;
+  min-width: 220px;
+  padding: 16px;
+  margin: 8px;
+  align-self: flex-start;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 48px;
+  max-height: calc(100vh - 70px);
+  overflow: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .navv {
+    display: none;
+  }
+}
+
+a {
+  color: #a6acc9;
+  text-decoration: none;
+}
+
+li.active > a {
+  color: white;
+}
+
+li > a:hover {
+  color: white;
+}
+
+/*  Gives a little bit of buffer when header is navigated to */
+h2,
+h3 {
+  padding-top: 16px;
+  margin-top: -16px;
+}
