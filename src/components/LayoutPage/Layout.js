@@ -13,17 +13,17 @@ const Layout = (items) => {
             razdel = props.razdel;
             return (
               <div className="card" key={index}>
-                <h3>{props.razdel}</h3>
-                <h2 id="initial-header">{props.description}</h2>
-                <h3 id={props.title}>{props.title}</h3>
+                <h1 id={props.razdel}>{props.razdel}</h1>
+                <h2 id={props.id}>{props.title}</h2>
+                <h3 id={props.header}>{props.description}</h3>
                 <p>{props.text}</p>
               </div>
             );
           } else {
             return (
               <div className="card" key={index}>
-                <h2 id="initial-header">{props.description}</h2>
-                <h3 id={props.title}>{props.title}</h3>
+                <h2 id={props.id}>{props.title}</h2>
+                <h3 id={props.header}>{props.description}</h3>
                 <p>{props.text}</p>
               </div>
             );

@@ -1,0 +1,12 @@
+a {
+  color: red;
+  text-decoration: none;
+}
+
+ul > li.active > a {
+  color: red;
+}
+
+ul > li > a:hover {
+  background-color: #1d3557;
+}
