@@ -2,7 +2,6 @@ body {
   font-family: sans-serif;
   line-height: 1.6;
   background-color: inherit;
-  color: #d8dee9;
 }
 .container {
   max-width: 1050px;
@@ -10,6 +9,14 @@ body {
   display: flex;
 }
 
+.aaa {
+  color: #457b9d;
+  font-size: 3.5rem;
+  font-weight: 200;
+  line-height: 2rem;
+  margin: 20px 0 20px 24px;
+  text-align: center;
+}
 main {
   max-width: 800px;
   background-color: inherit;
@@ -18,10 +25,19 @@ main {
   margin-left: 8px;
 }
 .card {
-  background-color: red;
+  box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
+  -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
+  border-radius: 10px;
+  background-color: #fff;
   padding: 20px;
   margin-top: 20px;
   border-radius: 25px;
+  flex: 9;
+  margin: 1rem 1rem;
+  border-radius: 15px 50px;
+  width: 720px;
+  height: 300px;
 }
 
 @media screen and (max-width: 900px) {
@@ -46,6 +62,7 @@ li > a:hover {
 /*  Gives a little bit of buffer when header is navigated to */
 h2,
 h3 {
+  color: #457b9d;
   padding-top: 16px;
   margin-top: -16px;
 }

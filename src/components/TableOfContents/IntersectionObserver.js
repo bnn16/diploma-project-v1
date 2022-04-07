@@ -29,10 +29,10 @@ const useIntersectionObserver = (setActiveId) => {
     };
 
     const observer = new IntersectionObserver(callback, {
-      rootMargin: '0px 0px -40% 0px',
+      rootMargin: '0px 0px -700px 0px',
     });
 
-    const headingElements = Array.from(document.querySelectorAll('h2, h3'));
+    const headingElements = Array.from(document.querySelectorAll('h1, h2'));
 
     headingElements.forEach((element) => observer.observe(element));
 

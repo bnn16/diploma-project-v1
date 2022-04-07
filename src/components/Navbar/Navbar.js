@@ -11,12 +11,12 @@ const Navbar = () => {
 
   return (
     <nav className="NavbarItem">
-      <h2 className="navbar-logo">
+      <h1 className="navbar-logo">
         <a className="navbar-logo" href="/">
-          KTT
+          KTT Book
           <i id="comp" className="fa-solid fa-computer"></i>
         </a>
-      </h2>
+      </h1>
       <div className="menu-icon" onClick={clickHandler}>
         <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
       </div>

@@ -23,6 +23,9 @@ const Cards = () => {
               label="ZPU"
               path="/zpu"
             />
+          </ul>
+          <br />
+          <ul className="cards__items">
             <CardItem
               src="https://www.popsci.com/uploads/2021/08/19/home-router.jpg?auto=webp&width=1440&height=1080"
               title="Компютърни мрежи"

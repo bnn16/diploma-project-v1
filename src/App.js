@@ -9,6 +9,7 @@ import Km from './pages/Km';
 import Zpu from './pages/Zpu';
 import Dzi from './pages/Dzi';
 import AT286 from './pages/lectures-Ka/AT286';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/dzi" element={<Dzi />} />
         <Route path="/ka/286" element={<AT286 />} />
       </Routes>
+      <Footer />
     </>
   );
 }

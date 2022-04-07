@@ -12,20 +12,28 @@ const Layout = (items) => {
           if (props.razdel !== razdel) {
             razdel = props.razdel;
             return (
-              <div className="card" key={index}>
-                <h1 id={props.razdel}>{props.razdel}</h1>
-                <h2 id={props.id}>{props.title}</h2>
-                <h3 id={props.header}>{props.description}</h3>
-                <p>{props.text}</p>
+              <div key={index}>
+                <h1 className="aaa" id={props.razdel}>
+                  {props.razdel}
+                </h1>
+                <a href={props.url}>
+                  <div className="card">
+                    <h2 id={props.id}>{props.title}</h2>
+                    <h3 id={props.header}>{props.description}</h3>
+                    <p>{props.text}</p>
+                  </div>
+                </a>
               </div>
             );
           } else {
             return (
-              <div className="card" key={index}>
-                <h2 id={props.id}>{props.title}</h2>
-                <h3 id={props.header}>{props.description}</h3>
-                <p>{props.text}</p>
-              </div>
+              <a key={index} href="/">
+                <div className="card">
+                  <h2 id={props.id}>{props.title}</h2>
+                  <h3 id={props.header}>{props.description}</h3>
+                  <p>{props.text}</p>
+                </div>
+              </a>
             );
           }
         })}
