@@ -10,27 +10,27 @@ const Footer = () => {
           KTT Book е сайт направен за учениците на СПГЕ Джон Атанасов за
           подготовка за ДКИ по специалност КТТ.
         </p>
-        <ul class="socials">
+        <ul className="socials">
           <li>
             <a href="https://spge-bg.com/">
-              <i class="fa-solid fa-school"></i>
+              <i className="fa-solid fa-school"></i>
             </a>
           </li>
           <li>
             <a href="https://github.com/bnn16">
-              <i class="fa-brands fa-github"></i>
+              <i className="fa-brands fa-github"></i>
             </a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/bogdan-nikolov-0b34b71bb/">
-              <i class="fa-brands fa-linkedin-in"></i>
+              <i className="fa-brands fa-linkedin-in"></i>
             </a>
           </li>
         </ul>
       </div>
-      <div class="footer-bottom">
+      <div className="footer-bottom">
         <p>
-          copyright &copy;2022 <a href="#">BNN16</a>
+          copyright &copy;2022 <a href="https://github.com/bnn16">BNN16</a>
         </p>
       </div>
     </footer>

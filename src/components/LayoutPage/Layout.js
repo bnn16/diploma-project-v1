@@ -27,7 +27,7 @@ const Layout = (items) => {
             );
           } else {
             return (
-              <a key={index} href="/">
+              <a key={index} href={props.url}>
                 <div className="card">
                   <h2 id={props.id}>{props.title}</h2>
                   <h3 id={props.header}>{props.description}</h3>
