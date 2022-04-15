@@ -10,17 +10,16 @@
   width: 220px;
   min-width: 220px;
   padding: 25px;
-  margin: 0 1rem;
+  margin: 15px 1rem;
   align-self: flex-start;
   position: -webkit-sticky; /* Safari */
   position: sticky;
-  top: 6rem;
   max-height: calc(100vh - 70px);
   overflow: auto;
   background: #e63946 none repeat scroll 0 0;
   border: 1px solid #aaa;
   display: table;
-  font-size: 95%;
+  font-size: small;
   box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
   -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
   filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));

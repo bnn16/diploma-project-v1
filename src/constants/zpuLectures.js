@@ -2,7 +2,6 @@ export const zpuLectures = [
   //zapomnqshti u-va
   {
     id: 'HDD',
-    header: 'HDD',
     razdel: 'Запомнящи',
     title: 'Hard Disk',
     url: '/zpu/hdd',

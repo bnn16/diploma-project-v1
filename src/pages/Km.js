@@ -1,16 +1,11 @@
 import React from 'react';
+import { kmLectures } from '../constants/kmLectures.js';
+import Layout from '../components/LayoutPage/Layout.js';
 
 const Km = () => {
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '90vh',
-      }}
-    >
-      <h1>Km page</h1>
+    <div>
+      <Layout lectures={kmLectures} tems="Computer Networks" />
     </div>
   );
 };
