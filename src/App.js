@@ -20,6 +20,12 @@ import ByProtocols from './pages/lectures-km/ByProtocols';
 import ByArch from './pages/lectures-km/ByArch';
 import Packets from './pages/lectures-km/Packets';
 import NetworkModels from './pages/lectures-km/NetworkModels';
+import NetworkP from './pages/lectures-km/NetworkP';
+import Ip from './pages/lectures-km/Ip';
+import Tcp from './pages/lectures-km/Tcp';
+import TcpIpHelpers from './pages/lectures-km/TcpIpHelpers';
+import Threats from './pages/lectures-km/Threats';
+import Protect from './pages/lectures-km/Protect';
 
 function App() {
   return (
@@ -34,6 +40,9 @@ function App() {
         <Route path="/dzi" element={<Dzi />} />
         <Route path="/ka/286" element={<AT286 />} />
         <Route path="/zpu/hdd" element={<HDD />} />
+        {
+          //Computer Networks lectures
+        }
         <Route path="/km/cables" element={<Cables />} />
         <Route path="/km/devices" element={<Devices />} />
         <Route path="/km/lan" element={<Lan />} />
@@ -43,6 +52,12 @@ function App() {
         <Route path="/km/architecture" element={<ByArch />} />
         <Route path="/km/packets" element={<Packets />} />
         <Route path="/km/models" element={<NetworkModels />} />
+        <Route path="/km/protocols" element={<NetworkP />} />
+        <Route path="/km/ip" element={<Ip />} />
+        <Route path="/km/udp" element={<Tcp />} />
+        <Route path="/km/iphelpers" element={<TcpIpHelpers />} />
+        <Route path="/km/threats" element={<Threats />} />
+        <Route path="/km/protecthard" element={<Protect />} />
       </Routes>
       <Footer />
     </>
