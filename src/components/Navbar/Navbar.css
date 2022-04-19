@@ -40,7 +40,7 @@
   grid-gap: 10px;
   list-style: none;
   text-align: center;
-  width: 75vw;
+  width: 62vw;
   justify-content: left;
   margin-right: 1rem;
 }
@@ -61,6 +61,12 @@
 
 .menu-icon {
   display: none;
+}
+
+.userName {
+  margin-right: 10px;
+  font-size: 13px;
+  color: #fff;
 }
 
 @media screen and (max-width: 720px) {

@@ -1,14 +1,44 @@
-import React, { useState } from 'react';
-import { MenuItems } from '../../constants/MenuItems.js';
-import './Navbar.css';
+import React, { useEffect, useState } from "react";
+import { MenuItems } from "../../constants/MenuItems.js";
+import "./Navbar.css";
+//UMS
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, db, logout } from "../../constants/firebaseConfig";
+import { query, collection, getDocs, where } from "firebase/firestore";
 
 const Navbar = () => {
+  const [user, loading, error] = useAuthState(auth);
+  const [name, setName] = useState("");
+  const fetchUserName = async () => {
+    try {
+      const q = query(collection(db, "users"), where("uid", "==", user?.uid));
+      const doc = await getDocs(q);
+      const data = doc.docs[0].data();
+      setName(data.name);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+  useEffect(() => {
+    if (loading) return;
+    fetchUserName();
+  }, [user, loading]);
   const [clicked, setClicked] = useState(false);
-
   const clickHandler = () => {
     setClicked(!clicked);
   };
-
+  let umsButtons = <a href="/login">Login</a>;
+  if (user) {
+    localStorage.setItem("uid", user.uid)
+    umsButtons = (
+      <>
+        <div className="userName">{user.displayName}</div>
+        <button className="dashboard__btn" onClick={logout}>
+          Logout
+        </button>
+      </>
+    );
+  }
   return (
     <nav className="NavbarItem">
       <h1 className="navbar-logo">
@@ -18,9 +48,9 @@ const Navbar = () => {
         </a>
       </h1>
       <div className="menu-icon" onClick={clickHandler}>
-        <i className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+        <i className={clicked ? "fas fa-times" : "fas fa-bars"}></i>
       </div>
-      <ul className={clicked ? 'nav-menu active' : 'nav-menu'}>
+      <ul className={clicked ? "nav-menu active" : "nav-menu"}>
         {MenuItems.map((item, index) => {
           return (
             <li key={index}>
@@ -31,6 +61,7 @@ const Navbar = () => {
           );
         })}
       </ul>
+      {umsButtons}
     </nav>
   );
 };
