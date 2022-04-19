@@ -15,7 +15,7 @@ const Navbar = () => {
     try {
       const q = query(collection(db, "users"), where("uid", "==", user?.uid));
       const doc = await getDocs(q);
-      console.log(doc.docs)
+      //console.log(doc.docs)
       const data = doc.docs[0].data();
       setName(data.name);
     } catch (err) {

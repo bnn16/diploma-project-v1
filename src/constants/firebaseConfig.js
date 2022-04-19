@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { GoogleAuthProvider, getAuth, signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail, signOut } from "firebase/auth";
+import 'firebase/firestore';
 import { getFirestore, query, getDocs, collection, where, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -36,6 +37,7 @@ const signInWithGoogle = async () => {
     alert(err.message);
   }
 };
+
 const logInWithEmailAndPassword = async (email, password) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
@@ -44,6 +46,7 @@ const logInWithEmailAndPassword = async (email, password) => {
     alert(err.message);
   }
 };
+
 const registerWithEmailAndPassword = async (name, email, password) => {
   try {
     const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -59,6 +62,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
     alert(err.message);
   }
 };
+
 const sendPasswordReset = async (email) => {
   try {
     await sendPasswordResetEmail(auth, email);
@@ -68,7 +72,29 @@ const sendPasswordReset = async (email) => {
     alert(err.message);
   }
 };
+
 const logout = () => {
   signOut(auth);
 };
-export { auth, db, signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset, logout };
+
+const saveLecture = async (data) => {
+  await addDoc(collection(db, "lectures"), {
+    heading: data.heading,
+    subHeading: data.subHeading,
+    abstract: data.abstract,
+    razdel: data.razdel,
+    fullText: data.fullText
+  }).then((results) => {
+    console.log(results)
+  });
+};
+
+const getLectures = async () => {
+  const q = query(collection(db, "lectures"));
+  const docs = await getDocs(q);
+  docs.forEach((doc) => {
+    console.log(doc.id, doc.data());
+  });
+}
+
+export { auth, db, signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset, logout, saveLecture, getLectures };

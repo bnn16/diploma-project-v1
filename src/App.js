@@ -30,6 +30,8 @@ import Protect from './pages/lectures-km/Protect';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Reset from './pages/Reset';
+// CRUD Lecture
+import CreateLecture from './pages/CreateLecture';
 
 function App() {
   return (
@@ -68,7 +70,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/reset" element={<Reset />} />
-        
+        {
+          //DocumentStorage
+        }
+        <Route path="/create-lecture" element={<CreateLecture />} />
       </Routes>
       <Footer />
     </>
