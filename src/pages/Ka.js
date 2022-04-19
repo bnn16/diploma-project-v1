@@ -6,6 +6,7 @@ import { getLectures } from '../constants/firebaseConfig';
 
 function Ka() {
   const [lecturesArr, setLecturesArr] = useState([]);
+  const [loading, setLoading] = useState(true)
   getLectures().then(function(data){
     const tempApp = [];
     data.forEach((doc) => {
@@ -20,12 +21,14 @@ function Ka() {
         }
       )
     });
-    console.log(tempApp)
     setLecturesArr(lecturesArr)
+    setLoading(false)
   });
-  //console.log(test)
+  
+
+  
   const navigate = useNavigate();
-  if(lecturesArr.length > 0){
+  if(!loading){
     return (
       <div>
         <button className="createLectureButton" onClick={() => navigate('/create-lecture')}>Create Lecture</button>
@@ -35,6 +38,7 @@ function Ka() {
   } else {
     return (
       <div>
+        
         Loading...
       </div>
     )
