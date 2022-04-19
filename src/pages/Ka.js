@@ -14,9 +14,9 @@ function Ka() {
       setUserAccess(u.data().userAccess);
     })
   });
-
+  const tempApp = [];
   getLectures().then(function(data){
-    const tempApp = [];
+    
     data.forEach((doc) => {
       lecturesArr.push(
         {

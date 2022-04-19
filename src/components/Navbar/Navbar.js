@@ -3,7 +3,6 @@ import { MenuItems } from "../../constants/MenuItems.js";
 import "./Navbar.css";
 //UMS
 import { useAuthState } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
 import { auth, db, logout } from "../../constants/firebaseConfig";
 import { query, collection, getDocs, where } from "firebase/firestore";
 

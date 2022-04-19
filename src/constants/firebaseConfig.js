@@ -6,6 +6,7 @@ import { getFirestore, query, getDocs, collection, where, addDoc } from "firebas
 // ТОДО
 // add methods for delete of lecture
 // add methods for update of lecture
+// add method for returing of single lecture
 
 const firebaseConfig = {
   apiKey: "AIzaSyByauk3ccdiS7I5n_Ma_lFhEp6WwRdclA0",
@@ -34,7 +35,7 @@ const signInWithGoogle = async () => {
         name: user.displayName,
         authProvider: "google",
         email: user.email,
-        userAccess: 'student'
+        userAccess: "student"
       });
     }
   } catch (err) {
@@ -61,7 +62,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
       name,
       authProvider: "local",
       email,
-      userAccess: 'student'
+      userAccess: "student"
     });
   } catch (err) {
     console.error(err);
@@ -81,6 +82,7 @@ const sendPasswordReset = async (email) => {
 
 const logout = () => {
   signOut(auth);
+  localStorage.removeItem("uid")
 };
 
 const saveLecture = async (data) => {
