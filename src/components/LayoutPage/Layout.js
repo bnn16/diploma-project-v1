@@ -4,7 +4,6 @@ import './Layout.css';
 
 // TODO
 // based on user access show or hide edit and delete buttons
-// create a page that is taking the URL props and showing the lecture
 
 const Layout = (items) => {
   //https://www.w3schools.com/howto/howto_css_blog_layout.asp
