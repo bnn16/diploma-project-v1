@@ -4,8 +4,6 @@ import 'firebase/firestore';
 import { getFirestore, query, getDocs, collection, where, addDoc } from "firebase/firestore";
 
 // ТОДО
-// extend the user db with user role
-// by default it should be student and admin has to be with special assignment
 // add methods for delete of lecture
 // add methods for update of lecture
 
@@ -103,4 +101,13 @@ const getLectures = async () => {
   return docs;
 }
 
-export { auth, db, signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset, logout, saveLecture, getLectures };
+const checkUserRights = async () => {
+  const uid = localStorage.getItem("uid");
+  if(uid){
+    const q = query(collection(db, "users"), where("uid", "==", uid));
+    const docs = await getDocs(q);
+    return docs;
+  }
+}
+
+export { auth, db, signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset, logout, saveLecture, getLectures, checkUserRights };

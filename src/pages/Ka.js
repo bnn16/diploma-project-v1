@@ -2,14 +2,19 @@ import React, { useState }  from 'react';
 import {  useNavigate } from "react-router-dom";
 import Layout from '../components/LayoutPage/Layout';
 import { kaLecturesPart1 } from '../constants/kaLecturesPart1.js';
-import { getLectures } from '../constants/firebaseConfig';
-
-// TODO
-// do not show add,edit,delete buttons if the user does not have the rights to see them
+import { getLectures, checkUserRights } from '../constants/firebaseConfig';
 
 function Ka() {
   const [lecturesArr, setLecturesArr] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
+  const [userAccess, setUserAccess] = useState('student');
+
+  checkUserRights().then(function(data){
+    data.forEach((u) => {
+      setUserAccess(u.data().userAccess);
+    })
+  });
+
   getLectures().then(function(data){
     const tempApp = [];
     data.forEach((doc) => {
@@ -28,14 +33,17 @@ function Ka() {
     setLoading(false)
   });
   
-
-  
   const navigate = useNavigate();
+  let createButton = ''
+  if(userAccess !== 'student'){
+    createButton = <button className="createLectureButton" onClick={() => navigate('/create-lecture')}>Create Lecture</button>
+  }
+
   if(!loading){
     return (
       <div>
-        <button className="createLectureButton" onClick={() => navigate('/create-lecture')}>Create Lecture</button>
-        <Layout lectures={lecturesArr} tems="Komp architecture" />
+        {createButton}
+        <Layout lectures={lecturesArr} tems="Komp architecture" userAccess={userAccess}/>
       </div>
     );
   } else {

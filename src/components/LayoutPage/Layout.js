@@ -1,9 +1,12 @@
 import React from 'react';
 import TableOfContents from '../TableOfContents/TableOfContents';
 import './Layout.css';
+
+// TODO
+// based on user access show or hide edit and delete buttons
+
 const Layout = (items) => {
   //https://www.w3schools.com/howto/howto_css_blog_layout.asp
-  console.log(items.lectures)
   let razdel = null;
 
   return (

@@ -30,6 +30,7 @@ const Navbar = () => {
   };
   let umsButtons = <a href="/login">Login</a>;
   if (user) {
+    localStorage.setItem("uid", user.uid)
     umsButtons = (
       <>
         <div className="userName">{user.displayName}</div>
