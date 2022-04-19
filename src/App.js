@@ -26,6 +26,10 @@ import Tcp from './pages/lectures-km/Tcp';
 import TcpIpHelpers from './pages/lectures-km/TcpIpHelpers';
 import Threats from './pages/lectures-km/Threats';
 import Protect from './pages/lectures-km/Protect';
+// UMS
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Reset from './pages/Reset';
 
 function App() {
   return (
@@ -58,6 +62,13 @@ function App() {
         <Route path="/km/iphelpers" element={<TcpIpHelpers />} />
         <Route path="/km/threats" element={<Threats />} />
         <Route path="/km/protecthard" element={<Protect />} />
+        {
+          //UMS
+        }
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/reset" element={<Reset />} />
+        
       </Routes>
       <Footer />
     </>
