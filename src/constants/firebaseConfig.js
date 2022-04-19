@@ -3,14 +3,20 @@ import { GoogleAuthProvider, getAuth, signInWithPopup, signInWithEmailAndPasswor
 import 'firebase/firestore';
 import { getFirestore, query, getDocs, collection, where, addDoc } from "firebase/firestore";
 
+// ТОДО
+// extend the user db with user role
+// by default it should be student and admin has to be with special assignment
+// add methods for delete of lecture
+// add methods for update of lecture
+
 const firebaseConfig = {
-    apiKey: "AIzaSyByauk3ccdiS7I5n_Ma_lFhEp6WwRdclA0",
-    authDomain: "diploma-project-v1.firebaseapp.com",
-    projectId: "diploma-project-v1",
-    storageBucket: "diploma-project-v1.appspot.com",
-    messagingSenderId: "23148589709",
-    appId: "1:23148589709:web:d1626c3fa6c4a5462668c4",
-    measurementId: "G-K6MS3KGF59"
+  apiKey: "AIzaSyByauk3ccdiS7I5n_Ma_lFhEp6WwRdclA0",
+  authDomain: "diploma-project-v1.firebaseapp.com",
+  projectId: "diploma-project-v1",
+  storageBucket: "diploma-project-v1.appspot.com",
+  messagingSenderId: "23148589709",
+  appId: "1:23148589709:web:d1626c3fa6c4a5462668c4",
+  measurementId: "G-K6MS3KGF59"
 };
 
 const app = initializeApp(firebaseConfig);
@@ -30,6 +36,7 @@ const signInWithGoogle = async () => {
         name: user.displayName,
         authProvider: "google",
         email: user.email,
+        userAccess: 'student'
       });
     }
   } catch (err) {
@@ -56,6 +63,7 @@ const registerWithEmailAndPassword = async (name, email, password) => {
       name,
       authProvider: "local",
       email,
+      userAccess: 'student'
     });
   } catch (err) {
     console.error(err);

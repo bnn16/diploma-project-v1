@@ -10,7 +10,6 @@ const Layout = (items) => {
     <div className="container">
       <main>
         {items.lectures.map((props, index) => {
-          console.log(props)
           if (props.razdel !== razdel) {
             razdel = props.razdel;
             return (
