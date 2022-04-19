@@ -32,6 +32,7 @@ import Register from './pages/Register';
 import Reset from './pages/Reset';
 // CRUD Lecture
 import CreateLecture from './pages/CreateLecture';
+import Lecture from './pages/Lecture';
 
 function App() {
   return (
@@ -74,6 +75,7 @@ function App() {
           //DocumentStorage
         }
         <Route path="/create-lecture" element={<CreateLecture />} />
+        <Route path="/lecture/:lectureId" element={<Lecture />} />
       </Routes>
       <Footer />
     </>

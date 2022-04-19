@@ -6,7 +6,12 @@ import { getFirestore, query, getDocs, collection, where, addDoc } from "firebas
 // ТОДО
 // add methods for delete of lecture
 // add methods for update of lecture
-// add method for returing of single lecture
+
+function uuidv4() {
+  return ([1e7]+-1e3+-4e3+-8e3+-1e11).replace(/[018]/g, c =>
+    (c ^ crypto.getRandomValues(new Uint8Array(1))[0] & 15 >> c / 4).toString(16)
+  );
+}
 
 const firebaseConfig = {
   apiKey: "AIzaSyByauk3ccdiS7I5n_Ma_lFhEp6WwRdclA0",
@@ -91,7 +96,8 @@ const saveLecture = async (data) => {
     subHeading: data.subHeading,
     abstract: data.abstract,
     razdel: data.razdel,
-    fullText: data.fullText
+    fullText: data.fullText,
+    uid: uuidv4()
   }).then((results) => {
     console.log(results)
   });
@@ -112,4 +118,10 @@ const checkUserRights = async () => {
   }
 }
 
-export { auth, db, signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset, logout, saveLecture, getLectures, checkUserRights };
+const getLecture = async (lectureId) => {
+  const q = query(collection(db, "lectures"), where("uid", "==", lectureId));
+  const docs = await getDocs(q);
+  return docs;
+}
+
+export { auth, db, signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset, logout, saveLecture, getLectures, checkUserRights, getLecture };

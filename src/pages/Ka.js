@@ -16,11 +16,10 @@ function Ka() {
   });
   const tempApp = [];
   getLectures().then(function(data){
-    
     data.forEach((doc) => {
       lecturesArr.push(
         {
-          id: doc.id,
+          id: doc.data().uid,
           razdel: doc.data().razdel,
           heading: doc.data().heading,
           subHeading: doc.data().subHeading,
