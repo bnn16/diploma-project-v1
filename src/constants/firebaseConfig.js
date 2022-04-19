@@ -92,9 +92,7 @@ const saveLecture = async (data) => {
 const getLectures = async () => {
   const q = query(collection(db, "lectures"));
   const docs = await getDocs(q);
-  docs.forEach((doc) => {
-    console.log(doc.id, doc.data());
-  });
+  return docs;
 }
 
 export { auth, db, signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset, logout, saveLecture, getLectures };
