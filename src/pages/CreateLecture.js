@@ -26,6 +26,7 @@ function CreateLecture() {
     const [abstract, setAbstract] = useState("");
     const [razdel, setRazdel] = useState("");
     const [fullText, setFullText] = useState("");
+    const [subject, setSubject] = useState("")
     const handleSubmit = (e) => {
         e.preventDefault();
         let input = {
@@ -46,12 +47,14 @@ function CreateLecture() {
               Create New Lecture
             </h1>
             <div className="input">
-              <select>
+              <label>Subject</label> &nbsp;
+              <select value={subject} onChange={(e) => setSubject(e.target.value)}>
                 <option value="ka">KA</option>
-                <option value="ka">KA</option>
-                <option value="ka">KA</option>
-                <option value="ka">KA</option>
+                <option value="zpu">ZPU</option>
+                <option value="km">KM</option>
+                <option value="dzi">DZI</option>
               </select>
+              <br/>
               <label>Heading</label> &nbsp;
               <input
                 type="text"
