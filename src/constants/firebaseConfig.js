@@ -91,7 +91,6 @@ const logout = () => {
 };
 
 const saveLecture = async (data) => {
-  console.log(data)
   await addDoc(collection(db, data.subject), {
     heading: data.heading,
     subHeading: data.subHeading,
@@ -119,10 +118,12 @@ const checkUserRights = async () => {
   }
 }
 
-const getLecture = async (lectureId) => {
-  const q = query(collection(db, "lectures"), where("uid", "==", lectureId));
+const getLecture = async (subject, lectureId) => {
+  const q = query(collection(db, subject), where("uid", "==", lectureId));
   const docs = await getDocs(q);
   return docs;
 }
+
+
 
 export { auth, db, signInWithGoogle, logInWithEmailAndPassword, registerWithEmailAndPassword, sendPasswordReset, logout, saveLecture, getLectures, checkUserRights, getLecture };

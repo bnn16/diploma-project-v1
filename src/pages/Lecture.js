@@ -5,14 +5,23 @@ import { getLecture } from '../constants/firebaseConfig';
 const Lecture = () => {
     const [lecture, setLecture] = useState([]);
     const [loading, setLoading] = useState(true);
-    let { lectureId } = useParams(); 
+    let { lectureId } = useParams();
 
-    getLecture(lectureId).then(function(data){
+
+    let subject = document.referrer.split("/")
+    subject = subject[subject.length - 1]
+
+    getLecture(subject, lectureId).then(function(data){
         data.forEach((l) => {
           setLecture(l.data());
         })
         setLoading(false)
     });
+
+    // deleteLecture(lectureId).then(function(data){
+    //     console.log
+    //     setLoading(true)
+    // });
     
     if(!loading){
         return (
