@@ -104,8 +104,8 @@ const saveLecture = async (data) => {
   });
 };
 
-const getLectures = async () => {
-  const q = query(collection(db, "lectures"));
+const getLectures = async (subject) => {
+  const q = query(collection(db, subject));
   const docs = await getDocs(q);
   return docs;
 }

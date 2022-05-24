@@ -15,7 +15,7 @@ function Ka() {
     })
   });
   const tempApp = [];
-  getLectures().then(function(data){
+  getLectures('ka').then(function(data){
     data.forEach((doc) => {
       lecturesArr.push(
         {
