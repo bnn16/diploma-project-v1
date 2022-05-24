@@ -46,7 +46,13 @@ function CreateLecture() {
               Create New Lecture
             </h1>
             <div className="input">
-                <label>Heading</label> &nbsp;
+              <select>
+                <option value="ka">KA</option>
+                <option value="ka">KA</option>
+                <option value="ka">KA</option>
+                <option value="ka">KA</option>
+              </select>
+              <label>Heading</label> &nbsp;
               <input
                 type="text"
                 required

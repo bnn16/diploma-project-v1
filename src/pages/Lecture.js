@@ -10,7 +10,6 @@ const Lecture = () => {
     getLecture(lectureId).then(function(data){
         data.forEach((l) => {
           setLecture(l.data());
-
         })
         setLoading(false)
     });
@@ -19,7 +18,7 @@ const Lecture = () => {
         return (
             <div>
                 <h3>{lecture.heading}</h3>
-                {lecture.fullText}
+                <div dangerouslySetInnerHTML={{ __html: lecture.fullText }} />
             </div>
         );
     } else {
