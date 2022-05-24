@@ -34,7 +34,8 @@ function CreateLecture() {
             subHeading,
             abstract,
             razdel,
-            fullText
+            fullText,
+            subject
         }
         saveLecture(input);
     };
@@ -48,7 +49,8 @@ function CreateLecture() {
             </h1>
             <div className="input">
               <label>Subject</label> &nbsp;
-              <select value={subject} onChange={(e) => setSubject(e.target.value)}>
+              <select name="subject" onChange={(e) => setSubject(e.target.value)}>
+                <option value="">Please Select subject</option>
                 <option value="ka">KA</option>
                 <option value="zpu">ZPU</option>
                 <option value="km">KM</option>
