@@ -91,7 +91,7 @@ const logout = () => {
 };
 
 const saveLecture = async (data) => {
-  await addDoc(collection(db, "lectures"), {
+  await addDoc(collection(db, data.subject), {
     heading: data.heading,
     subHeading: data.subHeading,
     abstract: data.abstract,
